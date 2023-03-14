@@ -1,0 +1,15 @@
+wczytaj a
+wczytaj b
+wczytaj c
+
+if ( a > b + c)
+ return false
+
+else if ( b > a + c)
+ return false
+
+else if ( c > a + b)
+ return false
+ 
+ else
+ return true

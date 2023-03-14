@@ -1,0 +1,17 @@
+wczytaj kwota
+stwórz zmienną i = 0
+N[]= [500, 200, 100, 50, 20, 10, 5, 2, 1]
+
+while (i < N.lenght)
+ {
+
+ if (kwota >= N[i] )
+  {
+  stwórz zmienną ilość_{N[i]} = div(kwota / N[i]		//nie pamiętam jak to się pisało, to jest chyba nie ten nawias, do zmiany
+  kwota = mod(kwota / N[i])
+  
+  }
+
+
+ i++
+ } 

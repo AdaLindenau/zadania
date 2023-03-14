@@ -1,0 +1,8 @@
+wczytaj a
+while (a >= 1)
+ { 
+ drukuj ( mod(a, 2))
+ a = div (a, 2)
+ 
+ 
+ }

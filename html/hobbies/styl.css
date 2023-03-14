@@ -1,0 +1,82 @@
+* {
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Mr Dafoe', cursive;
+
+    margin: 0 auto;
+    font-size:120%;
+  }
+  
+  /* Style the header */
+  header {
+    background-color: #5cbce9;
+    padding: 30px;
+    text-align: center;
+    font-size: 35px;
+    color: rgb(8, 28, 36);
+  }
+  
+  /* Container for flexboxes */
+  section {
+    display: -webkit-flex;
+    display: flex;
+  }
+  
+  /* Style the navigation menu */
+  nav {
+    -webkit-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+    background: #c0823c;
+    padding: 20px;
+  }
+  
+  /* Style the list inside the menu */
+  nav ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  /* Style the content */
+  article {
+    -webkit-flex: 3;
+    -ms-flex: 3;
+    flex: 3;
+    background-color: #ecbb9b;
+    padding: 10px;
+  }
+  
+  /* Style the footer */
+  footer {
+    background-color: #794f37;
+    padding: 10px;
+    text-align: center;
+    color: rgb(255, 255, 255);
+  }
+
+  a:link
+  {
+    color:rgb(19, 178, 206);
+  }
+  a:visited
+  {
+    color:rgb(0, 8, 82);
+  }
+  a:hover
+  {
+    color:white;
+  }
+  a:active
+  {
+    color:rgb(0, 0, 0);
+  }
+  
+  /* Responsive layout - makes the menu and the content (inside the section) sit on top of each other instead of next to each other */
+  @media (max-width: 600px) {
+    section {
+      -webkit-flex-direction: column;
+      flex-direction: column;
+    }
+  }

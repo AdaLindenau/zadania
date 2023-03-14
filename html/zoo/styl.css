@@ -1,0 +1,82 @@
+body{
+
+    margin:0 auto;
+}
+
+video{
+
+    width: 100%;
+    position: relative;
+    top:0px;
+}
+
+
+nav{
+    background-color: black;
+    color: white;
+    font-size: 40px;
+    vertical-align: text-top;
+}
+
+nav img{
+
+    height:40px
+}
+
+a:active, a:visited, a:hover, a:link{
+
+    color:white;
+}
+
+#napis{
+
+    margin:20% 10%;
+    padding: 10px;
+    background-color: darkcyan;
+    color: antiquewhite;
+    border-radius: 15px;
+    opacity: 0.7;
+    text-shadow: 1.5px 1.5px darkslategray;
+}
+
+#mapka{
+
+    margin:10% 20%;
+    padding: 10px;
+    background-color: rgb(255, 255, 255);
+    text-align: center;
+    border-radius: 20px;
+    opacity: 1;
+    
+}
+
+#srodek{
+
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: -10;
+}
+
+#kontakt{
+
+    padding:10px 30px;
+    color: lightgrey;
+    background-color: black;
+}
+
+#kup{
+
+    padding:60px;
+    color: rgb(0, 0, 0);
+    background-color: rgba(255, 255, 255, 0.6);
+    text-align: center;
+    margin-bottom: 15%;
+}
+
+#autor{
+    background-color: black;
+    color: aliceblue;
+    text-align: center;
+    padding: 10px;
+}

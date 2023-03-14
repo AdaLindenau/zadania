@@ -1,0 +1,92 @@
+//A, zakladam ,że tablica zaczyna się od 0
+wczytaj N I T[]
+stwórz zmienną i = 0
+stwórz zmienną wynik = 0
+
+while (i < N)
+{
+ wynik += T[i]
+ i++
+}
+
+return wynik
+
+//B
+wczytaj N I T[]
+stwórz zmienną i = 0
+stwórz zmienną naj_m = 0
+stwórz zmienną naj_w = 0
+
+while (i <N)
+{
+ if (T[i] < naj_m)
+  naj_m = T[i]
+ else
+ naj_w = T[i]
+ 
+ i++
+}
+return naj_m, naj_w
+
+//C
+wczytaj N I T[]
+wczytaj x
+stwórz zmienną i = 0
+stwórz zmienną ilość = 0
+
+while (i < N)
+{
+ if ( T[i] == x)
+  ilość ++
+  
+i++
+}
+
+return ilość
+
+//D
+wczytaj N I T[]
+stwórz zmienną i = 0
+wczytaj x
+
+while (i < N)
+{
+ if ( T[i] == x)
+  return i
+ 
+ i++
+}
+
+return -1
+
+
+/*można też tak, jeśli algorytm nie miałby się kończyć na return
+wczytaj N I T[]
+stwórz zmienną i = 0
+wczytaj x
+stwórz zmienną czy = -1
+
+while (i < N)
+{
+ if ( T[i] == x)
+  czy = i
+ 
+ i++
+}
+
+return czy
+*/
+
+
+//E
+wczytaj N I T[]
+stwórz zmienną i = 0
+stwórz zmienną wynik = 0
+
+while (i < N)
+{
+ wynik += T[i]
+ i++
+}
+
+return (wynik / N)

@@ -1,0 +1,27 @@
+a)
+
+25 - NIE
+37 - TAK
+41 - TAK
+49 - NIE
+
+b)
+
+1. fałsz
+2. prawda
+3. prawda
+4. fałsz
+
+c)
+ i = 2
+ stwórz czynniki[]
+while (n != 1) 
+{
+ if (n mod i == 0)
+  {
+   dodaj i do czynniki[]
+   n /= i
+ else
+  i++
+}
+return czynniki[]
