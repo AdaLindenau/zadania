@@ -13,7 +13,18 @@ x2 = (x1+a/x1)/2;
 }
 return x2;
 }
-
+/*
+long pierwiastekCalkowity(const long n) // Alternatively
+{
+_int128 p = 1;
+while(true)
+{
+p = (p+n/p)/2;
+if(p*p <= n && (p+1)*(p+1) > n) return p;
+}
+return (long)p;
+}
+*/
 int main()
 {
 ifstream plik("pierwiastki_calkowite.txt");
