@@ -18,6 +18,8 @@ return wynik;
 
 double funkcja(double x1, double x2)
 {
+if(F(x1) == 0) return x1;
+if(F(x2) == 0) return x2;
 int x3;
 while( abs(x1 - x2 < 0.001))
 {
