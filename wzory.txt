@@ -1,0 +1,96 @@
+Odcinek, prosta i punkty – przynależność i odległość
+
+Metoda na około dla 2D
+Wyznaczenie prostej, na której leżą dwa punkty.
+Mamy dwa punkty P1(x1, y1) oraz P2(x2, y2).
+Wyznaczenie współczynników A i B (ze wzoru na prostą y = A·x + B):
+A=y2−y1x2−x1
+ i B=y1−A⋅x1
+
+Przynależność punktu do prostej.
+Mamy trzeci punkt P3(x3, y3). Punkt należy do prostej gdy:
+
+y3−A⋅x3==B
+
+Przynależność punktu do odcinka.
+1. Punkt musi należeć do prostej.
+
+2. Odległość między punkami P3 i P1 oraz P3 i P2 musi być dla każdej z osobna mniejsza niż długość odcinka P1–P2.
+Albo: współrzędne punktu P3  x3 leżą pomiędzy x1 i x2, a y3 pomiędzy y1 i y2.
+
+Metoda bezpośrednia z użyciem macierzy 3×3, uogólniona dla 3 wymiarów. 
+Należy zbudować macierz: M=⎡⎣⎢x1x2x3y1y2y3z1z2z3⎤⎦⎥
+dla dwóch wymiarów trzecią kolumnę uzupełnij jedynkami. Następnie wyznaczamy wyznacznik macierzy i jeśli wynosi on 0 to punkty leżą na wspólnej prostej.
+ 
+
+Odległość punktu od prostej (2D).
+1. Badamy czy nie leży przypadkiem na badanej prostej (y = A·x+B), jeśli nie to idziemy do następnego punktu. (patrz wykorzystanie macierzy).
+2. Wyznaczamy prostą (y = C·x + D) prostopadłą do prostej badanej przez, którą przechodzi sprawdzany punkt. (C = -1/A), a C dobieramy tak aby: D = y3 - C·x3
+
+3. Szukamy punktu przecięcia naszej nowej prostej z badaną.
+
+x = (D-B)/(A-C)  i następnie znając x  liczymy y = A·x+B
+
+4. Obliczamy odległość pomiędzy punktem badanym, a punktem przecięcia tych prostych.
+
+Wyznaczenie wartości całki oznaczonej: metodą trapezów (prostokątów), Monte Carlo. Pole wielokąta.
+ 
+
+Całka to pole pod wykresem (lub nad wykresem, gdy wartość funkcji jest ujemna) w wyznaczonym przedziale osi X od [a, b]
+
+Metoda Monte Carlo.
+Polega na wybraniu obszaru w formie prostokąta i losowanie dużej ilości punktów. Następnie sprawdzanie jaka część tych punktów mieści się w obszarze pod funkcją. Zakładamy, że powierzchnia pod wykresem jest proporcjonalna do procentu punktów mieszczących się pod nią.
+
+Metoda prostokątów.
+Definiujemy szerokość prostokąta (delta). Im mniejsza tym obliczenie całki będzie dokładniejsze.
+
+Oznaczamy początek jako c = a;
+Idziemy w pętli od i = 0 przez kolejne punkty: od c do c+delta i przesuwamy punkt początkowy: c = c + delta. 
+
+Wyznaczamy wartość funkcji F(c), czyli jej wysokość na osi Y i mnożymy wartość bezwzględną funkcji przez delta i dodajemy do wartości całki.
+
+Przerywamy gdy c > b. Najlepiej dobrać delta w taki sposób, aby: b - c = n·delta (gdzie n liczba całkowita > 0)
+
+
+
+ 
+
+Metoda trapezu.
+Zasada jest podobna do metody prostokąta. Różnica polega na tym, że obliczamy pole jako trapez: (F(c)+F(c+delta))/2*delta
+
+
+
+Obliczenie pola powierzchni wielokąta  w układzie współrzędnych
+Dla wielokątów wypukłych (czyli każdy kąt jest wypukły), aby dokonać obliczeń powierzchni możemy użyć metody trapezu, podobnie jak w całce. Potrzebny jest zestaw uporządkowanych punktów, będących kolejnymi wierzchołkami wielokąta. Następnie wyliczamy pole trapezu pod wykresem. Sprawdzamy czy następny odcinek przesuwa się w tę samą stronę co poprzedni. Jeśli tak to dodajemy jego pole pod wykresem. W przeciwnym wypadku odejmujemy. 
+Za każdym razem musimy sprawdzać czy odcinek nie przechodzi przez oś X. Jeśli tak to dzielimy odcinek na dwie części nad osią X i pod osią X i osobno obliczamy pola i dodajemy.
+
+ Znajdowanie miejsca zerowego funkcji metodą połówkowania
+Metoda zakłada funkcję jednej zmiennej F(x), która jest:
+
+ciągła w zadanym przedziale zamkniętym [a, b]
+przyjmuje na końcach badanego przedziału ma różne znaki F(a)·F(b) < 0
+ 
+Wyszukiwanie przybliżonego miejsca zerowego polega na:
+
+znajdowaniu środka przedziału: c = (a+b)/2,
+a następnie jeżeli F(c)·F(b) < 0 i wtedy podmiana a = c,
+a w przeciwnym wypadku podmiana b = c.
+Procedura jest powtarzana aż do momentu gdy abs(a-b) jest mniejsze od zadanej dokładności. Ideę przedstawia obrazek poniżej:
+ 
+Algorytm wyznaczania pierwiastka – metoda Newtona
+Pierwiastek kwadratowy – metoda Newtona
+Do wyliczenia pierwiastka  x=√A
+ stosujemy pętlę lub rekurencję:   x.k+1.=1/2(x.k.+A/x.k.)
+
+
+
+W kolejnych przebiegach pętli sprawdzamy jaka jest różnica między poprzednio wyliczoną wartością pierwiastka, a obecną i przerywamy pętle gdy różnica ta jest mniejsza od założonej wartości (Delta).
+
+Pierwiastek n-tego stopnia
+Poprzednia metoda wykorzystuje metodę przybliżania stycznymi do funkcji:
+
+x.k+1.=x.k.−(f(x.k.)/f′(x.k.))
+
+Po wstawieniu funkcji typu: x=^n√A
+
+Otrzymujemy wzór rekurencyjny: x.k+1.=1/n((n−1)x.k.+A/x.k.^n−1)

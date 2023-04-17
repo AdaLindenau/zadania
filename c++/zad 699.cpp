@@ -12,18 +12,6 @@ double c = sqrt((a*a) + (b*b));
 return c;
 }
 
-pair<double,double> punktPrzeciecia (double a, double b, pair<int,int> pz)
-{
-double c = (-1 / a);
-double d = pz.second -(c* pz.first);
-double x = (d - b)/(double)(a - c);
-double y = (a * x )+ b;
-
-pair<double,double> punktPrzeciecia = make_pair(x, y);
-return punktPrzeciecia;
-}
-
-
 void Zbadaj(pair<double,double> p, vector<pair<double,double>> wierzcholki)
 {
 for(int i = 0; i < wierzcholki.size(); i++)
@@ -41,8 +29,25 @@ if(p.second - a * p.first == b && odleglosc(p, p1) < odleglosc(p1, p2) && odlegl
 na_obwodzie++;
 return;
 }
-else if () // sprawdzamy czy w polu
+pair<double,double> highest_point = p1; // sprawdzamy czy w polu
+pair<double,double> lowest_point = p1;
+for(pair<double,double> w: wierzcholki)
+{
+    if (w.second > highest_point.second) highest_point = w;
+    if(w.second < lowest_point.second) lowest_point = w;
 }
+pair<double,double> hw = p1;
+pair<double,double> lw = p1;
+if(p2.second > p1.second) hw = p2;
+if(p2.second < p1.second) lw = p2;
+
+if (hw.second == highest_point.second && p.second > a*p.first + b) return;
+else if (lw.second == lowest_point.second && p.second < a*p.first + b) return;
+else if(highest_point.first > hw.first && p.first < (p.second - b)/a) return; // to the right
+else if(highest_point.first < hw.first && p.first > (p.second - b)/a) return; // to the left
+}
+w_srodku++;
+return;
 }
 
 
