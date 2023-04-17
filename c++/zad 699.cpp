@@ -35,11 +35,13 @@ if (i == wierzcholki.size() -1) p2 = wierzcholki[0];
 
 double a = (p2.second - p1.second) / (double)(p2.first - p1.first);
 double b = p1.second - (a * p1.first);
-if(p.second - a * p.first == b && odleglosc(p, p1) <= odleglosc(p1, p2) && odleglosc(p, p2) <= odleglosc(p1, p2))
+
+if(p.second - a * p.first == b && odleglosc(p, p1) < odleglosc(p1, p2) && odleglosc(p, p2) < odleglosc(p1, p2)) // sprawdzamy czy na obwodzie
 {
 na_obwodzie++;
 return;
 }
+else if () // sprawdzamy czy w polu
 }
 }
 
@@ -53,19 +55,22 @@ ifstream plik ("wielokaty_punkty.txt");
 for(int i = 0; i < 200;i++)
 {
 plik >> boki;
-for(int i = 0; i << boki; i++)
+
+for(int i = 0; i < boki; i++)
 {
 double temp;
 double tempp;
 plik >> temp >> tempp;
 wierzcholki.push_back(make_pair(temp,tempp));
+
 }
 plik >> p.first;
 plik >> p.second;
 //koniec wczytania
 
 Zbadaj(p, wierzcholki);
-wierzcholki.empty();
+wierzcholki.clear();
+
 
 }
 cout << na_obwodzie  << " "<< w_srodku  << endl;
