@@ -41,6 +41,6 @@ int main()
 {
 cout.precision(20);
 cout << sqrt(2) << " " << pierwiastek(2) << endl;
-cout << pow(2, 4) << " " << pierwiastek(2, 1.0/4.0) << endl;
+//cout << pow(2, 4) << " " << pierwiastek(2, 1.0/4.0) << endl;
 return 0;
 }
