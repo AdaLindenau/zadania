@@ -7,18 +7,28 @@
     <title>JAVA - TEST</title>
     <script>
         let p = true;
+        let z = 0;
         function zamien(element){
             if (p) element.src = 'cat.png';
             else element.src = 'dog.jpg';
-            p!= p;
+            p= !p;
+            z++;
+            document.getElementById('ile').innerHTML = z;
+        }
+        function pobierz()
+        {
 
+            document.getElementById('imie').innerHTML = document.getElementById('input').value;
         }
     </script>
 
 </head>
 <body>
-<img src="dog.jpg" alt="" style="width: 200px" onclick="zamien(this)"> // this w onlick zwraca to na co klikneliśmy
-
+<img src="dog.jpg" alt="" style="width: 200px" onclick="zamien(this)"> <!--this w onlick zwraca to na co klikneliśmy  --> 
+<p>Kliknięto <span id="ile">0</span> razy</p>
+<p> Wpisz swoje imię: <input type="text" id ="input" oninput="pobierz()">
+    
+<P> Witaj <span id="imie"></span></P>
 </body>
 
 </html>
