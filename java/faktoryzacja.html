@@ -4,11 +4,32 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Faktoryzacja</title>
 </head>
 <body>
+    <p> <input type="text" id="liczba">       
+        <button onclick="faktoryzacja(parseInt(document.getElementById('liczba').value));">OK</button> 
+    </p>
+    
+    <div id="dzielniki"></div>
     <script>
+        function faktoryzacja(n)
+        {   let i = 2;
+            const N = Math.ceil(Math.sqrt)
+            var wynik = "";
+            while(n >= N)
+            {
+                if(n % i == 0) 
+                {
+                    n /= i;
+                    wynik += i + " ";
+                }
+                else i++;
 
+            }
+            document.getElementById('dzielniki').innerHTML = wynik;
+
+        }
         
     </script>
     
