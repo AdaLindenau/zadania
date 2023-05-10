@@ -7,10 +7,43 @@
     <title>Liczby Pierwsze</title>
 </head>
 <body>
-       <p> Witaj <span id="js"> </span></p>
+       <p>Znajdź liczby pierwsze od:
+        <input type="text" id="od"> do: <input type="text" id="do"> 
+        <button onclick="znajdz();">OK</button> 
+       </p>
     <script>console.log('Uruchomiono');
         document.getElementById("js").innerHTML="w JavaScript";
-    
+        function czyPierwsza(n)
+        {
+
+            if(n < 2) return false;
+            if(n == 2) return true;
+            if(n % 2 == 0) return false;
+            for(let i = 3; i*i <= n; i += 2)
+            {
+
+                if(n % i == 0) return false;
+            }
+            return true;
+
+        }
+        function znajdz()
+        {
+            document.getElementById('znalezione').innerHTML = ' ';
+            let l1 = parseInt(document.getElementById('od').value);
+            let l2 = parseInt(document.getElementById('do').value);
+
+            for(let i = l1; i < l2; i++)
+            {
+
+                if(czyPierwsza(i))
+                {
+
+                    document.getElementById('znalezione').innerHTML += i + " ";
+                }
+            }
+        }
+
     
     </script> <!-- każdy skrypt zapisany poza funkcją i w body uruchamia się za każdym razem jak odświerzamy stronę-->
  
