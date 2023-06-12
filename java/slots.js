@@ -4,26 +4,33 @@ let ile = 0;
 let liczba;
 let czas = 30;
 let funds = 1000;
-let bet;
+let bet = 0;
 
 
 
-const lever = document.getElementById('lever');
-lever.addEventListener("dragenter", document.getElementById('lever').src = 'gra/lever_middle_placeholder.png');
+const middle = document.getElementById('middle');
+middle.addEventListener("dragenter", (event) => {document.getElementById('lever').src = 'gra/lever_middle_placeholder.png'});
 
 function losuj()
 {
     console.log(funds ,' start');
     if(klikniento) return;
     bet = parseInt(document.getElementById('bet').value)
-    funds -= bet;
-    document.getElementById('funds').innerHTML = funds;
-    console.log(funds, 'after betting');
-    klikniento = true;
-    ile = 0;
-    czas = 30;
-    liczba = Math.ceil(Math.random()*6)
-    setTimeout(obroc, czas);
+    if (bet > 0)
+    {
+        funds -= bet;
+        document.getElementById('funds').innerHTML = funds;
+        console.log(funds, 'after betting');
+        klikniento = true;
+        ile = 0;
+        czas = 30;
+        liczba = Math.ceil(Math.random()*6)
+        setTimeout(obroc, czas);
+    }
+    else
+    {
+        alert("Najpierw zrób zakład");
+    }
 } 
 function obroc()
 {
