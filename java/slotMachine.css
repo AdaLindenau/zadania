@@ -1,0 +1,17 @@
+
+#middle
+{
+    text-align: center;
+    background: black;
+
+}
+
+.dropzone
+{
+
+    width: 20px;
+    height: 40px;
+    background: lightgrey;
+    padding:10px;
+    margin: 10px;
+}
