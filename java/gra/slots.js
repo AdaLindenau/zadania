@@ -23,7 +23,7 @@ function losuj()
         console.log(funds, 'after betting');
         klikniento = true;
         ile = 0;
-        czas = 30;
+        czas = 15;
         liczba = Math.ceil(Math.random()*12)
         setTimeout(obroc, czas);
     }
@@ -49,7 +49,7 @@ function obroc()
     }
     else
     {
-        setTimeout(obroc,czas+=50);
+        setTimeout(obroc,czas+=20);
     }
 }   
 function wylosuj()
@@ -66,20 +66,11 @@ function bigWin()
     let s3 = document.getElementById('spin3').src;
     console.log(s1);
 
-    let cherry = 'file:///C:/Users/elind/Desktop/Stuff/writings/zadania_na_korona_ferie/Infa/zadania/java/gra/assets/s7.png';
+    let cherry = 'file:///home/adal21b/Dokumenty/zadania/java/gra/assets/s7.png';
 
 
-    if (s1 == cherry || s2 == cherry || s3 == cherry)
-    {
-        funds += bet*2;
-        console.log('a single cherry');
-    }
-    else if(((s1 == s2 || s1 == s3) && s1 == cherry ) || (s2 == s3 && s2 == cherry)) 
-    {
-        funds += bet*3;
-        console.log('2 cherries');
-    }
-    else if (s1 == s2 && s1== s3)
+    
+    if (s1 == s2 && s1== s3)
     {
         console.log('3 of the same');
         console.log('s1 = ', s1);
@@ -87,7 +78,7 @@ function bigWin()
         {
             //file:///home/adal21b/Dokumenty
 
-            case 'file:///C:/Users/elind/Desktop/Stuff/writings/zadania_na_korona_ferie/Infa/zadania/java/gra/assets/s1.png':
+            case 'file:///home/adal21b/Dokumenty/zadania/java/gra/assets/s1.png':
                 funds += bet*5;
                 console.log('3 razy 1, x5');
                 break;
@@ -140,6 +131,16 @@ function bigWin()
         }
 
 
+    }
+    else if(((s1 == s2 || s1 == s3) && s1 == cherry ) || (s2 == s3 && s2 == cherry)) 
+    {
+        funds += bet*3;
+        console.log('2 cherries');
+    }
+    else if (s1 == cherry || s2 == cherry || s3 == cherry)
+    {
+        funds += bet*2;
+        console.log('a single cherry');
     }
     
 

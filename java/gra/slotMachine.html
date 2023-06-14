@@ -6,16 +6,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Slot Machine</title>
     <script src="slots.js"></script>
-    <style src="slotMachine.css"></style>
+    <link rel="stylesheet" href="slotMachine.css">
 </head>
 <body>
-    <img src="assets/s7.png" alt="" id="spin1">
-    <img src="assets/s7.png" alt="" id="spin2">
-    <img src="assets/s7.png" alt="" id="spin3">
-    <button onclick="losuj();">SPIN</button>
+
+    <div id="betting">
     <p>Zakład:</p>
     <input type="text" id="bet">
     <p>Fundusze:</p> <p id = 'funds'>1000</p>
+    </div>
+
+    <section id="machine">
+    <article>
+    <img src="assets/s7.png" alt="" id="spin1" height="120px" width="120px">
+    <img src="assets/s7.png" alt="" id="spin2" height="120px" width="120px">
+    <img src="assets/s7.png" alt="" id="spin3" height="120px" width="120px">
+    </article>
+    <article id="bt">
+    <button class="button" onclick="losuj();">SPIN</button>
+    </article>
+    </section>
+
+
+    
     <!--<img class='dropzone' id="'lever" draggable="true" src="lever_up_placeholder.png">
     <div class="dropzone" id="middle"> hello</div>
     <div class="dropzone" id="down">spin</div>
